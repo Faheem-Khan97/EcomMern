@@ -16,7 +16,7 @@ const ProductSc = ({match}) => {
       
 
 
-    }, [])
+    }, [match])
 
     const {image, name, rating, description, price } = product
 

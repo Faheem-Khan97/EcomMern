@@ -1,6 +1,5 @@
 const products = [
     {
-        _id:1,
         name: "Redmi Note 11 Pro",
         image: "images/mob1.jpeg",
         brand: "Redmi India",
@@ -12,7 +11,6 @@ const products = [
         description: "The best mobile with 8gb RAM, 636 snapdragon processor with an affordable price."
     },
     {
-        _id:2,
         name: "Realme Mobile",
         image: "images/mob2.jpeg",
         brand: "Xiomi India",
@@ -24,7 +22,6 @@ const products = [
         description: "The Realme mobile with 8GB RAM, 768 snapdragon processor with an affordable price."
     },
     {
-        _id:3,
         name: "Amazon Speaker",
         image: "images/mob4.jpeg",
         brand: "Amazon India",
@@ -36,7 +33,6 @@ const products = [
         description: "The speaker with quality sound in an affodable price."
     },
     {
-        _id:4,
         name: "Canon Camera Note 11 Pro",
         image: "images/cam-1.jpeg",
         brand: "Canon Camera India",
@@ -48,7 +44,6 @@ const products = [
         description: "The camera which let you guide every single pixel."
     },
     {
-        _id:5,
         name: "Canon Camera Note 11 Pro",
         image: "images/cam-2.jpeg",
         brand: "Canon Camera India",
@@ -60,7 +55,6 @@ const products = [
         description: "The camera which let you guide every single pixel."
     },
     {
-        _id:6,
         name: "Canon Camera Note 11 Pro",
         image: "images/cam-3.jpeg",
         brand: "Canon Camera India",
@@ -72,4 +66,5 @@ const products = [
         description: "The best Camera. High quality resolution."
     },
 ]
-module.exports =  products;
+
+export default products;
