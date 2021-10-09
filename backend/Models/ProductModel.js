@@ -1,4 +1,4 @@
-import mongoose, { Model } from 'mongoose'
+import mongoose from 'mongoose'
 
 const reviewSchema = mongoose.Schema({
     name:{
@@ -10,7 +10,7 @@ const reviewSchema = mongoose.Schema({
         required:true,
         default:0
     },
-    rating:{
+    comment:{
         type:String,
         required:true,
        
@@ -19,7 +19,7 @@ const reviewSchema = mongoose.Schema({
 
 const ProductSchema =  mongoose.Schema({
     user:{
-        type: mongoose.Schema.TyPes.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required:true,
         ref:'User'
     },
@@ -38,7 +38,7 @@ const ProductSchema =  mongoose.Schema({
         required:true,
     },
     image:{
-        type:Boolean,
+        type:String,
         required:true,
         default:0
     },
@@ -56,7 +56,7 @@ const ProductSchema =  mongoose.Schema({
     reviews: [reviewSchema],
 
     numOfReviews:{
-        type:String,
+        type:Number,
         required:true,
         default:0
     },
