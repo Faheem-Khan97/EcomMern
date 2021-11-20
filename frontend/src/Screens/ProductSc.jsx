@@ -1,33 +1,41 @@
 import React, { useState , useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import  {listProductItem } from '../actions/productActions.js';
 import products from '../products'
 import { Link } from 'react-router-dom'
 // import {img} from '../../public/imagesmob2.jpeg'
 
 const ProductSc = ({match}) => {
+
+     const dispatch = useDispatch();
+     
+     const productItem = useSelector(state => { 
+         console.log(state)
+         return state.productItem;
+     })
     
-    const [product, setProduct] = useState({})
+     
+    const {loading, product, error} = productItem;
 
 
-    useEffect(async () => {
 
-        const jsonData = await fetch(`/api/products/${match.params.id}`)
-        const product = await jsonData.json();
-        setProduct(product)
-      
+     useEffect(() => {
 
-
-    }, [match])
-
-    const {image, name, rating, description, price } = product
+        dispatch(listProductItem(match.params.id));
+        
+     }, [dispatch, match])
 
     return (
         <section className = "h-90 " >
-            <h2>Helloooo</h2>
-            <article>
-                <img src={`/${image}`} alt={product.name} loading = "lazy" />
-            </article>
-            
-           helloo
+            { loading ? <h1>Loading..............</h1>
+            :<div  > 
+                <h2>Helloooo</h2>
+                <article>
+                    <img src={`/${product.image}`} alt={product.name} loading = "lazy" />
+                    <h5>{product.name}</h5>
+                </article>
+            </div>
+    }
         </section>
     )
 }
